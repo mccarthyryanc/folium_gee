@@ -14,6 +14,7 @@ setup(
     author_email='mccarthyryanc@gmail.com',
     license='MIT',
     install_requires=[
+        'oauth2client',
         'folium',
         'earthengine-api',
     ],
