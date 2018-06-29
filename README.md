@@ -6,7 +6,6 @@ Take a look at the tests directory for usage, but here is a simple example:
 
 ```python
 import ee
-import folium
 import foliumgee
 
 ee.Initialize()
