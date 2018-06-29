@@ -2,6 +2,7 @@
 Quick and dirty package to view Google Earh Engine Tile Layers in Folium Maps
 """
 import folium
+import logging
 
 __version__ = 0.1
 
