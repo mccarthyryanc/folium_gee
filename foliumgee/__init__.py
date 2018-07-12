@@ -13,7 +13,7 @@ _gee_attr = ('Map Data &copy; <a href="https://earthengine.google.com/">'
              'Google Earth Engine</a> ')
 _gee_url = "https://earthengine.googleapis.com/map/%s/{z}/{x}/{y}?token=%s"
 
-def map(image,vis_params=None,folium_kwargs={}):
+def map(image,vis_params=None,folium_kwargs={}, name='GEE Basemap'):
     """
     Function to view Google Earch Engine tile layer as a Folium map.
     
@@ -22,6 +22,7 @@ def map(image,vis_params=None,folium_kwargs={}):
     image : Google Earth Engine Image.
     vis_params : Dict with visualization parameters.
     folium_kwargs : Keyword args for Folium Map.
+    name : Legend name for basemap, default is 'GEE Basemap'.
     """
     
     # Get the MapID and Token after applying parameters
@@ -30,6 +31,7 @@ def map(image,vis_params=None,folium_kwargs={}):
     token = image_info['token']
     folium_kwargs['attr'] = (_gee_attr)
     folium_kwargs['tiles'] = _gee_url%(mapid,token)
+    folium_kwargs['name'] = name
     
     return folium.Map(**folium_kwargs)
 

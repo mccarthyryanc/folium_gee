@@ -19,7 +19,8 @@ def test_map(html=None):
     vis_params = {'min':0.0, 'max':3000}
     folium_params={'location':[lat, lon],
                    'zoom_start':zoom_start}
-    m = foliumgee.map(image,vis_params=vis_params,folium_kwargs=folium_params)
+    m = foliumgee.map(image,vis_params=vis_params,folium_kwargs=folium_params,
+                      name='SRTM')
 
     # Create a reference to the image collection
     l8 = ee.ImageCollection('LANDSAT/LC8_L1T_TOA')
